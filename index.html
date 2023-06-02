@@ -14,21 +14,30 @@
   <header>
     <div class="header container">
       <h1>Weekly Planner</h1>
-      <div class="days-of-the-week hidden" >
-        <h2>Sunday</h2>
-        <h2>Monday</h2>
-        <h2>Tuesday</h2>
-        <h2>Wednesday</h2>
-        <h2>Thursday</h2>
-        <h2>Friday</h2>
-        <h2>Saturday</h2>
-      </div>
-      <button class="entry-btn" type="submit">Add Entry</button>
     </div>
   </header>
 
   <main>
     <div class="main container">
+      <div class="days-of-the-week hidden">
+        <h2 id="sunday">Sunday</h2>
+        <h2 id="monday">Monday</h2>
+        <h2 id="tuesday">Tuesday</h2>
+        <h2 id="wednesday">Wednesday</h2>
+        <h2 id="thursday">Thursday</h2>
+        <h2 id="friday">Friday</h2>
+        <h2 id="saturday">Saturday</h2>
+      </div>
+      <button class="entry-btn" type="submit">Add Entry</button>
+      <h2>Scheduled Events For <span></span></h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Time</td>
+            <td>Description</td>
+          </tr>
+        </tbody>
+      </table>
       <div class="modal-container hidden">
         <div class="modal-dialog">
           <h2>Add Entry</h2>
