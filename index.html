@@ -9,20 +9,22 @@
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <header>
-    <div class="header-container">
+    <div class="header container">
       <h1>Weekly Planner</h1>
       <button class="entry-btn" type="submit">Add Entry</button>
     </div>
   </header>
+
   <main>
     <div class="main container">
       <div class="modal-container hidden">
         <div class="modal-dialog">
           <h2>Add Entry</h2>
           <form class="entry-form">
-            <div>
+            <div class="day-time-container">
               <select name="day" id="day-of-week">
                 <option>Day of Week</option>
                 <option value="sunday">Sunday</option>
@@ -61,12 +63,11 @@
                 <option>24:00</option>
               </select>
             </div>
-            <div>
-              <textarea placeholder="Description" rows="10" cols="30">
-              </textarea>
+            <div class="description-container">
+              <textarea placeholder="Description" rows="10" cols="30"></textarea>
             </div>
-            <div class="submit-btn">
-              <button class="submit" value="submit">Submit</button>
+            <div class="submit-btn-container">
+              <button class="submit-btn">Submit</button>
             </div>
           </form>
         </div>
@@ -79,7 +80,7 @@
 
 
 
-
+  <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
 
