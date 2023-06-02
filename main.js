@@ -42,6 +42,7 @@ $entryForm.addEventListener('submit', event => {
 
 function renderEntry(entry) {
   const $tableRow = document.createElement('tr');
+  $tableRow.classList.add(entry.day);
 
   const $tdTime = document.createElement('td');
   $tableRow.appendChild($tdTime);
@@ -50,5 +51,10 @@ function renderEntry(entry) {
   const $tdDescription = document.createElement('td');
   $tableRow.appendChild($tdDescription);
   $tdDescription.textContent = entry.description;
+
   return $tableRow;
+}
+
+function viewSwap(day) {
+  entryData.view = day;
 }

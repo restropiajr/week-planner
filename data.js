@@ -1,5 +1,5 @@
 var entryData = {
-  view: 'entry-form',
+  view: 'monday',
   entries: [],
   editing: null,
   nextEntryId: 1
