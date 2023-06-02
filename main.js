@@ -56,5 +56,39 @@ function renderEntry(entry) {
 }
 
 function viewSwap(day) {
-  entryData.view = day;
+  for (let i = 0; i < entryData.entries.length; i++) {
+    if (day === entryData.entries[i].day) {
+      entryData.entries[i].classList.remove('hidden');
+    } else {
+      entryData.entries[i].classList.add('hidden');
+    }
+  }
 }
+
+$dotw.addEventListener('click', function (event) {
+  const day = event.target.textContent.toLowerCase();
+  switch (day) {
+    case 'sunday':
+      viewSwap('unday');
+      break;
+    case 'monday':
+      viewSwap('monday');
+      break;
+    case 'tuesday':
+      viewSwap('tuesday');
+      break;
+    case 'wednesday':
+      viewSwap('wednesday');
+      break;
+    case 'thursday':
+      viewSwap('thursday');
+      break;
+    case 'friday':
+      viewSwap('friday');
+      break;
+    case 'saturday':
+      viewSwap('saturday');
+      break;
+  }
+
+});
