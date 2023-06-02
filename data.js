@@ -1,8 +1,7 @@
 var entryData = {
   view: 'monday',
   entries: [],
-  editing: null,
-  nextEntryId: 1
+  editing: null
 };
 
 window.addEventListener('beforeunload', event => {

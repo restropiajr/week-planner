@@ -25,6 +25,8 @@ $entryForm.addEventListener('submit', event => {
   $modalContainer.classList.add('hidden');
   $dotw.classList.remove('hidden');
   $table.classList.remove('hidden');
+  $entryForm.reset();
+  viewSwap('monday');
 });
 
 // <tr>
@@ -55,39 +57,60 @@ function renderEntry(entry) {
   return $tableRow;
 }
 
-function viewSwap(day) {
-  for (let i = 0; i < entryData.entries.length; i++) {
-    if (day === entryData.entries[i].day) {
-      entryData.entries[i].classList.remove('hidden');
-    } else {
-      entryData.entries[i].classList.add('hidden');
-    }
+document.addEventListener('DOMContentLoaded', event => {
+
+  for (const entry of entryData.entries) {
+    $tbody.appendChild(renderEntry(entry));
   }
+
+  viewSwap(entryData.view);
+});
+
+function viewSwap(day) {
+  const rows = document.querySelectorAll('tr');
+  rows.forEach(row => {
+    if (row.classList.contains(day)) {
+      row.classList.remove('hidden');
+    } else {
+      row.classList.add('hidden');
+    }
+  });
+
+  entryData.view = day;
 }
+
+const $scheduledDay = document.querySelector('#scheduledDay');
 
 $dotw.addEventListener('click', function (event) {
   const day = event.target.textContent.toLowerCase();
   switch (day) {
     case 'sunday':
       viewSwap('sunday');
+      $scheduledDay.textContent = 'sunday';
       break;
     case 'monday':
       viewSwap('monday');
+      $scheduledDay.textContent = 'monday';
       break;
     case 'tuesday':
       viewSwap('tuesday');
+      $scheduledDay.textContent = day;
       break;
     case 'wednesday':
       viewSwap('wednesday');
+      $scheduledDay.textContent = day;
       break;
     case 'thursday':
       viewSwap('thursday');
+      $scheduledDay.textContent = day;
       break;
     case 'friday':
       viewSwap('friday');
+      $scheduledDay.textContent = day;
       break;
     case 'saturday':
       viewSwap('saturday');
+      $scheduledDay.textContent = day;
       break;
   }
 
