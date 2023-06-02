@@ -14,3 +14,36 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-dialog {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1rem;
+  width: 500px;
+}
+
+h2 {
+  text-align: center;
+}
+
+select {
+  margin: 0.5rem;
+}
+
+textarea {
+  margin: 0.5rem;
+}
