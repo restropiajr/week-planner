@@ -5,7 +5,8 @@ const $dotw = document.querySelector('.days-of-the-week');
 const $table = document.querySelector('table');
 const $selectDayInput = document.querySelector('#day-of-week');
 const $selectTimeInput = document.querySelector('#time-options');
-
+const $textInput = document.querySelector('#description');
+const $tbody = document.querySelector('tbody');
 $entryBtn.addEventListener('click', function () {
   $modalContainer.classList.remove('hidden');
 });
@@ -15,14 +16,12 @@ $entryForm.addEventListener('submit', event => {
 
   const entry = {
     day: $selectDayInput.value,
-    time: $selectTimeInput.value
-    // time: $title.value,
-    // URL: $photoURL.value,
-    // notes: $notes.value
+    time: $selectTimeInput.value,
+    description: $textInput.value
   };
 
   entryData.entries.unshift(entry);
-
+  $tbody.prepend(renderEntry(entry));
   $modalContainer.classList.add('hidden');
   $dotw.classList.remove('hidden');
   $table.classList.remove('hidden');
@@ -46,8 +45,10 @@ function renderEntry(entry) {
 
   const $tdTime = document.createElement('td');
   $tableRow.appendChild($tdTime);
+  $tdTime.textContent = entry.time;
 
   const $tdDescription = document.createElement('td');
   $tableRow.appendChild($tdDescription);
+  $tdDescription.textContent = entry.description;
   return $tableRow;
 }
