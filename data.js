@@ -1,4 +1,4 @@
-var data = {
+var entryData = {
   view: 'entry-form',
   entries: [],
   editing: null,
@@ -7,13 +7,13 @@ var data = {
 
 window.addEventListener('beforeunload', event => {
 
-  const dataJSON = JSON.stringify(data);
-  localStorage.setItem('data', dataJSON);
+  const dataJSON = JSON.stringify(entryData);
+  localStorage.setItem('entryData', dataJSON);
 
 });
 
-const previousDataJSON = localStorage.getItem('data');
+const previousDataJSON = localStorage.getItem('entryData');
 
 if (previousDataJSON !== null) {
-  data = JSON.parse(previousDataJSON);
+  entryData = JSON.parse(previousDataJSON);
 }

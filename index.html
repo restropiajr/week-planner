@@ -14,6 +14,15 @@
   <header>
     <div class="header container">
       <h1>Weekly Planner</h1>
+      <div class="days-of-the-week hidden" >
+        <h2>Sunday</h2>
+        <h2>Monday</h2>
+        <h2>Tuesday</h2>
+        <h2>Wednesday</h2>
+        <h2>Thursday</h2>
+        <h2>Friday</h2>
+        <h2>Saturday</h2>
+      </div>
       <button class="entry-btn" type="submit">Add Entry</button>
     </div>
   </header>
@@ -25,7 +34,7 @@
           <h2>Add Entry</h2>
           <form class="entry-form">
             <div class="day-time-container">
-              <select name="day" id="day-of-week">
+              <select name="day" id="day-of-week" required>
                 <option>Day of Week</option>
                 <option value="sunday">Sunday</option>
                 <option value="monday">Monday</option>
@@ -35,7 +44,7 @@
                 <option value="friday">Friday</option>
                 <option value="saturday">Saturday</option>
               </select>
-              <select name="time" id="time-options">
+              <select name="time" id="time-options" required>
                 <option>Time</option>
                 <option>1:00</option>
                 <option>2:00</option>
@@ -64,7 +73,7 @@
               </select>
             </div>
             <div class="description-container">
-              <textarea placeholder="Description" rows="10" cols="30"></textarea>
+              <textarea placeholder="Description" rows="10" cols="30" required></textarea>
             </div>
             <div class="submit-btn-container">
               <button class="submit-btn">Submit</button>

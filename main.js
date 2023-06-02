@@ -1,6 +1,7 @@
 const $entryBtn = document.querySelector('.entry-btn');
 const $modalContainer = document.querySelector('.modal-container');
-const $entryForm = document.querySelector('.entry-Form');
+const $entryForm = document.querySelector('.entry-form');
+const $dotw = document.querySelector('.days-of-the-week');
 
 $entryBtn.addEventListener('click', function () {
   $modalContainer.classList.remove('hidden');
@@ -9,10 +10,8 @@ $entryBtn.addEventListener('click', function () {
 $entryForm.addEventListener('submit', event => {
   event.preventDefault();
 
-  // create entry for new object
-
   $modalContainer.classList.add('hidden');
-
+  $dotw.classList.remove('hidden');
 });
 
 // render entry function
