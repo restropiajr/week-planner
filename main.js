@@ -69,7 +69,7 @@ $dotw.addEventListener('click', function (event) {
   const day = event.target.textContent.toLowerCase();
   switch (day) {
     case 'sunday':
-      viewSwap('unday');
+      viewSwap('sunday');
       break;
     case 'monday':
       viewSwap('monday');
